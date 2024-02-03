@@ -1,0 +1,15 @@
+5、answer
+Compare between merge sort and quick sort：
+————————————————————————————————————————————————————————————————
+1）Merge Sort:               |     2）Quick Sort:               |
+----------------------------------------------------------------
+Best Case: O(n log n)        |  Best Case: O(n log n)           |
+Average Case: O(n log n)     |  Average Case: O(n log n)        |
+Worst Case: O(n log n)       |  Worst Case: O(n^2)              |
+————————————————————————————————————————————————————————————————
+
+result：
+1) Both merge sort and quick sort have a best and average time complexity of O(n log n), making them efficient sorting algorithms for most cases.
+2) However, in the worst-case scenario, quick sort can degrade to O(n^2) due to poor pivot selection, 
+   while merge sort maintains its O(n log n) time complexity regardless of the input array. 
+3) Therefore, merge sort is more consistent in terms of performance across different inputs, making it a preferred choice when a guaranteed runtime is necessary.

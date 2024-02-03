@@ -1,0 +1,38 @@
+3、answer
+
+// Quick sort algorithm for sorting an array in ascending order
+
+
+function quickSort(array, low, high)
+    if low < high
+        // 1）Partition the array and get the pivot element index
+        pivotIndex = partition(array, low, high)
+        
+        // 2）Recursively apply quicksort to the left and right sub-arrays
+        quickSort(array, low, pivotIndex - 1)
+
+        quickSort(array, pivotIndex + 1, high)
+
+
+function partition(array, low, high)
+    pivot = array[high]                 // Choose the last element as the pivot
+
+    i = low - 1                         // Index of the smaller element
+    for j = low to high - 1
+        if array[j] <= pivot
+            i++
+            swap array[i] and array[j]
+    
+    // Place the pivot element in its correct position
+    swap array[i + 1] and array[high]
+    
+    return i + 1  // Return the index of the pivot element
+
+
+[Comment]：
+The pseudo code outlines the quick sort algorithm. 
+The quickSort function takes an array and the indices of the first and last elements.
+It recursively partitions the array based on a chosen pivot element and then applies quicksort to the resulting sub-arrays.
+The partition function selects a pivot element and rearranges the array so that all elements less than the pivot are to its left, 
+and all greater elements are to its right. 
+This process continues until the entire array is sorted.

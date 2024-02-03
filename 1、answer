@@ -1,0 +1,43 @@
+1、answer
+Write in pseudo code a merge sort algorithm the works over an array
+// Merge sort algorithm for sorting an array in ascending order
+function mergeSort(array)
+    if length of array < 2
+        return array  			// Array with 0 or 1 element is already sorted
+    
+    // 1）Split the array into two halves
+    middle = length of array / 2
+    left_Array = first half of array
+    right_Array = second half of array
+    
+    // 2）Recursively sort the two halves
+    left_Array = mergeSort(left_Array)
+    right_Array = mergeSort(right_Array)
+    
+    // 3）Merge the sorted halves
+    merged_Array = merge(left_Array, right_Array)
+    
+    return merged_Array
+
+function merge(left_Array, right_Array)
+    result = empty array
+    while left_Array is not empty and right_Array is not empty
+        if first element of left_Array <= first element of right_Array
+            append first element of left_Array to result
+            remove first element from left_Array
+        else
+            append first element of right_Array to result
+            remove first element from right_Array
+    
+    // Append remaining elements from left_Array and right_Array if any
+    append remaining elements of left_Array to result
+    append remaining elements of right_Array to result
+    
+    return result
+
+
+Comment：
+    This pseudo code outlines a typical implementation of the merge sort algorithm. 
+    The mergeSort function recursively splits the array into smaller parts until each part contains only one element. 
+    Then, these smaller parts are merged back together in sorted order using the merge function. 
+    This process continues until the entire array is sorted.
